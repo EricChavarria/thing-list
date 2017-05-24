@@ -17,7 +17,7 @@ const ThingList = (props) => {
                     .map(thingID => <Thing 
                                         thing={props.things[thingID]} 
                                         key={thingID}
-                                        saveThing={props.saveThing}
+                                        {...props}
                                     />)
             }
         </ul>
