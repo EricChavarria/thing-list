@@ -14,11 +14,21 @@ class App extends Component {
     }
   }
 
+  addThing = () => {                      //Arrow Function binds "this"
+    const things = {...this.state.things}
+    const thing = {
+      id: 'thing-4',
+      name: 'Steel-cut Irish Oatmeal'
+    }
+    things[thing.id] = thing
+    this.setState({ things })
+  }
+
   render() {
     return (
       <div className="App">
           <Header />
-          <AddThingButton />
+          <AddThingButton addThing={this.addThing} />
           <ThingList things={this.state.things} />
       </div>
     );
