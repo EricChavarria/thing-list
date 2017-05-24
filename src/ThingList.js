@@ -14,7 +14,11 @@ const ThingList = (props) => {
                 Object
                     .keys(props.things)
                     .sort(sortThings)
-                    .map(thingID => <Thing thing={props.things[thingID]} key={thingID}/>)
+                    .map(thingID => <Thing 
+                                        thing={props.things[thingID]} 
+                                        key={thingID}
+                                        saveThing={props.saveThing}
+                                    />)
             }
         </ul>
     )
