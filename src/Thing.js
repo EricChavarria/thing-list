@@ -17,7 +17,7 @@ class Thing extends Component {
 
     blurOnEnter = (ev) => {
         if(ev.key === 'Enter') {
-            ev.preventDefault
+            ev.preventDefault()
             ev.target.blur()
         }
     }
