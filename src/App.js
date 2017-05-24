@@ -25,7 +25,8 @@ class App extends Component {
     return {
        id: `thing-${Date.now()}`,
        name: '',
-       completed: false
+       completed: false,
+       date: ''
     }
   }
 

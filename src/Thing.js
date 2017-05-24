@@ -6,7 +6,7 @@ import Actions from './Actions'
 
 class Thing extends Component {
     componentDidMount() {
-        if(!this.nameInput.htmlEl.textContext) {
+        if(!this.nameInput.htmlEl.textContent) {
             this.nameInput.htmlEl.focus()
         }
     }
@@ -30,10 +30,21 @@ class Thing extends Component {
         saveThing(thing)
     }
 
+    updateDate = (ev) => {
+        const {thing, saveThing} = this.props
+        thing.date = ev.target.value
+        saveThing(thing)
+    }
+
     render() {
         const { thing, removeThing } = this.props
         return (
             <li className="Thing">
+                        <input
+                            type="date"
+                            value={thing.date}
+                            onChange={this.updateDate}
+                        />
                         <input 
                             type="checkbox" 
                             value="on"
