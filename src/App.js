@@ -26,7 +26,7 @@ class App extends Component {
        id: `thing-${Date.now()}`,
        name: '',
        completed: false,
-       date: ''
+       dueOn: '',
     }
   }
 
